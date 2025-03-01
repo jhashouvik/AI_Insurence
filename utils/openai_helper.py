@@ -1,19 +1,9 @@
-from dotenv import load_dotenv
-import os
+import streamlit as st
 import json
 from openai import OpenAI
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Debug: Print the API key to verify it's loaded
-api_key = os.getenv("OPENAI_API_KEY")
-#print("Loaded OpenAI API Key:", api_key)
-
-# Initialize OpenAI client
-if not api_key:
-    raise ValueError("OpenAI API key not found in .env file. Please check your configuration.")
-
+# Initialize OpenAI client using Streamlit Secrets
+api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
 def process_user_input(query):
