@@ -2,7 +2,7 @@ import streamlit as st
 from utils.animation_helper import show_process_animation, show_company_comparison_animation
 from utils.company_helper import process_company_comparison
 from utils.insurance_helper import process_insurance_query
-from utils.openai_helper import process_user_input
+from utils.groq_helper import process_user_input  # Updated import
 
 # Set up Streamlit page
 st.set_page_config(
